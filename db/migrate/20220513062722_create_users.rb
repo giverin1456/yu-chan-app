@@ -13,6 +13,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.integer :know_id,        null: false
       t.string :email,           null: false, default: ""
       t.date :birthday,          null: false
+      t.text :text
       t.timestamps
     end
   end

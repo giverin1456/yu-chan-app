@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.order("created_at DESC")
+    @users = User.all.order("created_at DESC")
   end
 
   def new
@@ -19,6 +19,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :kana, :gender_id, :phone_number, :postal_code, :prefecture_id, :city, :street, :building, :know_id, :email, :birthday)
+    params.require(:user).permit(:name, :kana, :gender_id, :phone_number, :postal_code, :prefecture_id, :city, :street, :building, :know_id, :email, :birthday, :image)
   end
 end

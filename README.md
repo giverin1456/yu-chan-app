@@ -15,6 +15,7 @@
 | know_id             | integer| null: false              |
 | email               | string | null: false ,unique: true|
 | birthday            | date   | null: false              |
+| text                | text   |                          |
 
 ### Association
 - has_many :outpatients

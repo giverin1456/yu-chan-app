@@ -19,10 +19,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @outpatient = Outpatient.new
+    @outpatients = Outpatient.where(user_id: @user.id)
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :kana, :gender_id, :phone_number, :postal_code, :prefecture_id, :city, :street, :building, :know_id, :email, :birthday, :image)
+    params.require(:user).permit(:name, :kana, :gender_id, :phone_number, :postal_code, :prefecture_id, :city, :street, :building, :know_id, :email, :birthday, :text, :image)
   end
 end

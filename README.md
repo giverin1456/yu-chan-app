@@ -28,7 +28,7 @@
 | ------------------  | ---------  | -----------------------------  |
 | text                | string     |                                |
 | price               | string     | null: false                    |
-| day_id              | datetime   | null: false                    |
+| day                 | datetime   | null: false                    |
 | user_id             | references | null: false, foreign_key:true  |
 
 ### Association

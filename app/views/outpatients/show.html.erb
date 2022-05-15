@@ -1,0 +1,8 @@
+
+<%= @outpatient.price%>
+<%= @outpatient.text%>
+<%= @outpatient.start_time.strftime('%Y/%m/%d')%>
+
+<a href = "/users/<%=@user.id%>/outpatients/<%=@outpatient.id%>/edit">編集</a>
+<%= link_to "削除",user_outpatient_path(@outpatient.id), method: :delete, data: {confirm:"削除しますか？"}%>
+<%= link_to "戻る" %>

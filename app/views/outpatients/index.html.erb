@@ -1,0 +1,17 @@
+<%= render partial: "outpatient"%>
+
+<%= month_calendar events:@outpatients  do |date, events| %>
+  <%= date.day %>
+  <% events.each do |event| %>
+    <div>
+    <a href="/users/<%=@user.id%>/outpatients/<%=event.id%>">¥<%= event.price %></a>
+    </div>
+    <%= event.text%>
+  <% end %>
+<% end %>
+
+<% @outpatients.each do |t|%>
+<%= t.price%>
+<%= t.text%>
+<%= t.start_time.strftime('%Y/%m/%d')%>
+<%end%>

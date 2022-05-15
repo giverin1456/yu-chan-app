@@ -1,0 +1,6 @@
+<%= form_with(model: @outpatient, local: true) do |f| %>
+  <div>
+    <%= f.label :images, '画像' %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+<% end %>

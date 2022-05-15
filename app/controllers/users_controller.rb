@@ -19,8 +19,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @outpatient = Outpatient.new
-    @outpatients = Outpatient.where(user_id: @user.id)
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destory
   end
 
   private

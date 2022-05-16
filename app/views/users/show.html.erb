@@ -1,9 +1,9 @@
 <a href="/users/<%=@user.id%>/somatics/new">画像追加</a>
 <%= link_to "index",user_somatics_path(@user.id)%>
 
-<%= @abc.each do |t|%>
-<%= image_tag(t.images) %>
-<%end%>
+<%# <%= @abc.each do |t|%> %>
+<%# <%= image_tag(t.images) %> %>
+<%# <%end%> %>
 
 <%= image_tag(@user.image.variant(resize: '500x500'))%>
 <%= @user.name%>様

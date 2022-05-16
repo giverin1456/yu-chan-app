@@ -6,11 +6,6 @@ class OutpatientsController < ApplicationController
     @outpatients = Outpatient.where(user_id: @user.id)
   end
 
-  # def new
-  #   @outpatient = Outpatient.new
-  #   @aaa = 
-  # end
-
   def create
     @outpatient = Outpatient.new(outpatient_params)
     @user = @outpatient.user

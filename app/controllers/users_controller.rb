@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.order("created_at DESC")
+    @users = User.all.order("name")
   end
 
   def new
@@ -29,6 +29,10 @@ class UsersController < ApplicationController
   end
 
   def destory
+  end
+
+  def search
+    @users = User.search(params[:keyword])
   end
 
   private

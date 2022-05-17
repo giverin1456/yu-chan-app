@@ -11,7 +11,7 @@
   </div>
   <div class="start_time">
     <label class="form-text">日付</label>
-    <%= form.datetime_select :start_time %>
+    <%= form.date_select :start_time, {}, {class: 'form-control', style: 'display: inline-block;width: auto;'} %>
   </div>
   <div class="outpatient-submit">
     <%= form.submit "登録", class:"outpatient-submit-btn" %>

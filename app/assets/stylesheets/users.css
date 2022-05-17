@@ -1,3 +1,39 @@
+/* user/index */
+.user-index{
+
+}
+.user-index-contents{
+  display: flex;
+}
+.side-bar{
+  width: 25%;
+}
+.user-index-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.user-index-group{
+  margin: 20px;
+}
+.user-index-image{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.user-index-name{
+  text-align: center;
+  margin-top: 5px;
+}
+
+.search-form{
+  text-align: center;
+  margin-top: 20px;
+}
+.search-btn{
+  padding: 0 5px;
+}
+
 /* user/show */
 
 .user-top-contents{

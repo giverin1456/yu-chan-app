@@ -1,10 +1,12 @@
 .simple-calendar {
+  width: 65%;
+
   .day {
     border: 1px solid black;
   }
 
   .wday-0 {
-    background-color: rgb(255, 191, 191);
+    background-color: #f9cece;
   }
   .wday-1 {}
   .wday-2 {}
@@ -12,7 +14,7 @@
   .wday-4 {}
   .wday-5 {}
   .wday-6 {
-    background-color: rgb(188, 188, 255);
+    background-color: #bcd8ff;
   }
 
   .today {
@@ -35,13 +37,126 @@
   .has-events {
     background-color: yellow;
   }
+}
 
+.outpatient-calendar{
+  display: flex;
+  margin: 30px 0;
+}
+.outpatient-form{
+  width: 25%;
+}
+.outpatient-form-contents{
+  margin-left: 20px;
+}
+.outpatient-submit{
+  margin: 30px 0 0 0;
+}
+.outpatient-submit-btn{
+  padding:2px 5px;
+  background-color: rgb(107, 134, 255);
+}
+select#outpatient_start_time_2i {
+  width: 45px;
+}
 
-  // .prev-month a {
-  //   display: none;
-  // }
-  // .next-month a {
-  //   display: none;
-  // }
+// outpatient/new
+.outpatient-text-form{
+  height: 200px;
+  width: 90%;
+  padding: 3px 5px;
+}
+.outpatient-price-form{
+  width: 60%;
+  padding: 3px 5px;
+}
 
+// outpatients/show
+.detail-table {
+  margin: 25px auto;
+  width: 80%;
+}
+.detail-item {
+  width: 25%;
+  background-color: #badcf8;
+  border: 1px solid gray;
+  font-size: 14px;
+  text-align: center;
+}
+.detail-value {
+  width: 90%;
+  padding: 20px;
+  border: 1px solid gray;
+  font-size: 14px;
+  color: #3b4043;
+}
+
+.detail-items {
+  width: 25%;
+  background-color: #badcf8;
+  border: 1px solid gray;
+  font-size: 14px;
+  text-align: center;
+}
+.detail-values {
+  width: 90%;
+  height: 350px;
+  padding: 20px;
+  border: 1px solid gray;
+  font-size: 14px;
+  color: #3b4043;
+}
+
+.outpatient-btn{
+  text-align: end;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.outpatient-btn-edit{
+  background-color: green;
+  border: 1px solid black;
+  border-radius: 10%;
+  padding: 2px 10px;
+}
+.outpatient-btn-delete{
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 10%;
+  margin-left: 10px;
+  padding: 2px 10px;
+}
+.outpatient-btn-return{
+  background-color: blue;
+  border: 1px solid black;
+  border-radius: 10%;
+  margin-left: 10px;
+  padding: 2px 10px;
+}
+
+.aa{
+  width: 20px;
+}
+
+.outpatient-price-image{
+  text-align: end;
+}
+.outpatient-image{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.table thead th {
+  background-color: #badcf8;
+}
+.table thead th {
+  border: 1px solid black;
+}
+
+.detail-values-text {
+  width: 100%;
+  white-space: pre-line;
+  word-wrap: break-word;
+  text-align: left;
 }

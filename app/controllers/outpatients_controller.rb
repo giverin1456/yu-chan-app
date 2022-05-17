@@ -19,11 +19,13 @@ class OutpatientsController < ApplicationController
   def show
     @outpatient = Outpatient.find(params[:id])
     @user = User.find(params[:user_id])
+    @outpatients = Outpatient.where(user_id: @user.id)
   end
 
   def edit
     @outpatient = Outpatient.find(params[:id])
     @user = User.find(params[:user_id])
+    @outpatients = Outpatient.where(user_id: @user.id)
   end
 
   def update

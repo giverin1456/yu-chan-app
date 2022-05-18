@@ -1,13 +1,3 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  root to: 'items#index'
-
-  resources :users do
-    resources :outpatients
-    resources :somatics
-
-    collection do
-      get 'search'
-    end
-  end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -4,6 +4,7 @@ class OutpatientsController < ApplicationController
     @user = User.find(params[:user_id])
     @outpatient = Outpatient.new
     @outpatients = Outpatient.where(user_id: @user.id)
+    @sss = @user.outpatients.order(created_at: :desc).first
   end
 
   def create

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all.order("name")
+    @sss = Outpatient.order(created_at: :desc).first
   end
 
   def new
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @abc = Somatic.where(user_id: @user.id)
+    @sss = @user.outpatients.order(created_at: :desc).first
   end
 
   def edit

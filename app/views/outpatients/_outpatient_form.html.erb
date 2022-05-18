@@ -1,0 +1,21 @@
+<div class="outpatient-form">
+ <div class="outpatient-form-contents">
+<%= form_with(model:[@user,@outpatient], local: true) do |form| %>
+  <div class="price">
+    <label class="form-text">利用料金</label>
+    <%= form.text_field :price, class: "outpatient-price-form" %>
+  </div>
+  <div class="text">
+    <label class="form-text">特記事項</label>
+    <%= form.text_area :text,class: "outpatient-text-form" %>
+  </div>
+  <div class="start_time">
+    <label class="form-text">日付</label>
+    <%= form.date_select :start_time, {}, {class: 'form-control', style: 'display: inline-block;width: auto;'} %>
+  </div>
+  <div class="outpatient-submit">
+    <%= form.submit "登録", class:"outpatient-submit-btn" %>
+  </div>
+<% end %>
+</div>
+</div>

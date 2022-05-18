@@ -1,0 +1,43 @@
+<div class="outpatient">
+<div class="outpatient-calendar">
+<div class="outpatient-form">
+
+
+       <%# 商品の情報 %>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">利用日</th>
+          <td class="detail-value"><%= @outpatient.start_time.strftime('%Y/%m/%d')%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">料金</th>
+          <td class="detail-value">¥<%= @outpatient.price%></td>
+        </tr>
+        <tr>
+          <th class="detail-items">特記</th>
+          <td class="detail-values">
+          <div class="detail-values-text">
+          <%= @outpatient.text%>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+<div class="outpatient-btn">
+<div class="outpatient-btn-edit">
+<a href = "/users/<%=@user.id%>/outpatients/<%=@outpatient.id%>/edit">編集</a>
+</div>
+<div class="outpatient-btn-delete">
+<%= link_to "削除",user_outpatient_path(@outpatient.id), method: :delete, data: {confirm:"削除しますか？"}%>
+</div>
+<div class="outpatient-btn-return">
+<%= link_to "戻る" %>
+</div>
+</div>
+</div>
+<%= render partial: "outpatient_text"%>
+</div>
+</div>
+</div>

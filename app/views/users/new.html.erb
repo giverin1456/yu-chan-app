@@ -1,0 +1,75 @@
+<%= form_with(model: @user, local: true) do |f| %>
+
+<%= f.file_field :image, class: 'olddd', id:'message_image' %>
+ <div class="form-group">
+    <label for="exampleFormControlInput1">名前</label>
+<%= f.text_field :name, class:"form-control", id:"exampleFormControlInput1", placeholder:"名前" %>
+</div>
+
+ <div class="form-group">
+  <label for="exampleFormControlInput1">カタカナ</label>  
+   <%= f.text_field :kana, class:"form-control", id:"exampleFormControlInput1", placeholder:"カタカナ" %>
+   </div>
+
+    <div class="form-group">
+  <label for="exampleFormControlInput1">メールアドレス</label>  
+   <%= f.text_field :email, class:"form-control", id:"exampleFormControlInput1", placeholder:"メールアドレス" %>
+   </div>
+
+    <div class="form-group">
+  <label for="exampleFormControlInput1">電話番号</label>  
+   <%= f.text_field :phone_number, class:"form-control", id:"exampleFormControlInput1", placeholder:"電話番号" %>
+   </div>
+
+       <div class="form-group">
+  <label for="exampleFormControlInput1">郵便番号</label>  
+   <%= f.text_field :postal_code, class:"form-control", id:"exampleFormControlInput1", placeholder:"5801234" %>
+   </div>
+
+       <div class="form-group">
+  <label for="exampleFormControlInput1">都道府県</label>  
+     <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlInput1"}) %>
+   </div>
+
+       <div class="form-group">
+  <label for="exampleFormControlInput1">市区町村</label>  
+   <%= f.text_field :city, class:"form-control", id:"exampleFormControlInput1", placeholder:"松原市" %>
+   </div>
+
+    <div class="form-group">
+  <label for="exampleFormControlInput1">番地</label>  
+   <%= f.text_field :street, class:"form-control", id:"exampleFormControlInput1", placeholder:"番地" %>
+   </div>
+
+       <div class="form-group">
+  <label for="exampleFormControlInput1">建物名</label>  
+   <%= f.text_field :building, class:"form-control", id:"exampleFormControlInput1", placeholder:"建物名" %>
+   </div>
+
+ <div class="form-group">
+  <label for="exampleFormControlInput1">性別</label>  
+ <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlInput1"}) %>
+ </div>
+
+        <div class="form-group">
+  <label for="exampleFormControlInput1">どこで知ったか</label>  
+  <%= f.collection_select(:know_id, Know.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlInput1"}) %>
+   </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">特記事項</label>
+    <%= f.text_area :text, class:"form-control", id:"exampleFormControlTextarea1", placeholder:"特記事項" %>
+  </div>
+  <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'form-control',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: Time.now.year - 50,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+  <%= f.submit "登録" ,class:"register-red-btn" %>
+<% end %>

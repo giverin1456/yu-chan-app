@@ -50,6 +50,6 @@ class OutpatientsController < ApplicationController
 
   private
   def outpatient_params
-    params.require(:outpatient).permit(:price, :text, :start_time).merge(user_id: params[:user_id])
+    params.require(:outpatient).permit(:price, :text, :medical_category_id, :start_time).merge(user_id: params[:user_id])
   end
 end

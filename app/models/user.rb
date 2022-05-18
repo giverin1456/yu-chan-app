@@ -8,7 +8,6 @@ class User < ApplicationRecord
   belongs_to_active_hash :know
   belongs_to_active_hash :gender
 
-
   def self.search(search)
     if search != ""
       User.where('name LIKE(?)', "%#{search}%")

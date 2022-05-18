@@ -5,6 +5,10 @@
     <label class="form-text">利用料金</label>
     <%= form.text_field :price, class: "outpatient-price-form" %>
   </div>
+  <div class="price">
+  <label for="form-text">施術内容</label>  
+     <%= form.collection_select(:medical_category_id, MedicalCategory.all, :id, :name, {}, {class:"outpatient-price-form", id:"medical_form"}) %>
+   </div>
   <div class="text">
     <label class="form-text">特記事項</label>
     <%= form.text_area :text,class: "outpatient-text-form" %>

@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_05_15_093708) do
     t.text "text"
     t.datetime "start_time", null: false
     t.string "price"
+    t.integer "medical_category_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

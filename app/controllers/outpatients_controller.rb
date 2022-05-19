@@ -4,7 +4,19 @@ class OutpatientsController < ApplicationController
     @user = User.find(params[:user_id])
     @outpatient = Outpatient.new
     @outpatients = Outpatient.where(user_id: @user.id)
-    @sss = @user.outpatients.order(created_at: :desc).first
+    @first = @user.outpatients.order(:created_at).first
+    @sales = Outpatient.group("MONTH(price)").sum(:price)
+
+    now = Date.parse(params[:start_date])
+    @ttt = now.all_month
+    @aaa = Outpatient.where(start_date: @ttt)
+
+    # @month = params[:month] ? Date.parse(params[:month]) : Time.zone.today
+    # @orders = Outpatient.where(updated_at: @month.all_month)
+
+    @ccc = Outpatient.where("updated_at <= ?", Time.now)
+    # Time.now-30.day
+
   end
 
   def create

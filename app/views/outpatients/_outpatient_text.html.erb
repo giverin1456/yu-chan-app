@@ -10,3 +10,22 @@
   <% end %>
 <% end %>
 </div>
+<% @ccc.each do |ccc|%>
+<%= ccc.user_id%>
+<%end%>
+
+<%= week_calendar(number_of_weeks: 2) do |date| %>
+  <%= date.day %>
+<% end %>
+
+<%= calendar(start_date_param: :my_date) do |date| %>
+  <%= date %>
+<% end %>
+
+<%= month_calendar(attribute: :start_date) do |date| %>
+  <%= date %>
+<% end %>
+
+<%= month_calendar(attribute: :start_time, end_attribute: :end_date) do |date| %>
+  <%= date %>
+<% end %>

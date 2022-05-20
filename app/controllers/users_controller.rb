@@ -20,10 +20,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @abc = Somatic.where(user_id: @user.id)
+    # @abc = Somatic.where(user_id: @user.id)
     @somatic = Somatic.new
-    @somatics = @user.somatics
-
     @first = @user.outpatients.order(start_time: :ASC).first
     @last = @user.outpatients.order(start_time: :ASC).last
   end

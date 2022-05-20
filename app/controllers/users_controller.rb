@@ -21,9 +21,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @abc = Somatic.where(user_id: @user.id)
-    
-    # @last = @user.outpatients.order(created_at: :desc).first
-    # @first = @user.outpatients.order(:created_at).first
+
+    @first = @user.outpatients.order(start_time: :ASC).first
+    @last = @user.outpatients.order(start_time: :ASC).last
   end
 
   def edit

@@ -4,24 +4,23 @@ class OutpatientsController < ApplicationController
     @user = User.find(params[:user_id])
     @outpatient = Outpatient.new
     @outpatients = Outpatient.where(user_id: @user.id)
-    @first = @user.outpatients.order(:created_at).first
+    @first = @user.outpatients.order(start_time: :ASC).first
     @sales = Outpatient.group("MONTH(price)").sum(:price)
 
-    now = Date.parse(params[:start_date])
-    @ttt = now.all_month
-    @aaa = Outpatient.where(start_date: @ttt)
+    # now = Date.today.month
 
-    # @month = params[:month] ? Date.parse(params[:month]) : Time.zone.today
-    # @orders = Outpatient.where(updated_at: @month.all_month)
+    @ccc = Outpatient.where("start_time <= ?", Time.now)
+    # @aaa = Outpatient.where(:start_time )
 
-    @ccc = Outpatient.where("updated_at <= ?", Time.now)
+    # unless @aaa<= Time.now
+    # end
     # Time.now-30.day
 
   end
-
   def create
     @outpatient = Outpatient.new(outpatient_params)
     @user = @outpatient.user
+
     if @outpatient.save
       redirect_to "/users/#{@user.id}/outpatients"
     else

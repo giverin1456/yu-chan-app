@@ -1,4 +1,5 @@
 <div class="outpatient-form">
+ <%= @user.name%>様
  <div class="outpatient-form-contents">
 <%= form_with(model:[@user,@outpatient], local: true) do |form| %>
   <div class="price">

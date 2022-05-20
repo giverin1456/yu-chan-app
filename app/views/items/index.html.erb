@@ -8,3 +8,9 @@
 <%= link_to "ログイン", new_admin_session_path, class: "post" %>
  <%= link_to "新規登録", new_admin_registration_path, class: "post" %>
 <%end%>
+
+
+<%= @now%>月の初診受付
+<% @orders.each do |orders|%>
+<%= orders.name%>
+<%end%>

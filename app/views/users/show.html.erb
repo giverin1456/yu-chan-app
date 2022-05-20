@@ -1,3 +1,16 @@
+<a href="/users/<%=@user.id%>/somatics/new">画像追加</a>
+<%= link_to "index",user_somatics_path(@user.id)%>
+
+
+<p>
+  <strong>Portrait:</strong>
+  <% if @somatic.somaticimages.attached? %>
+    <% @somatic.somaticimages.each do |image| %>
+      <%= image_tag image.variant(resize_to_limit: [100, 100]) %>
+    <% end %>
+  <% end %>
+</p>
+
 <%# <%= @abc.each do |t|%>
 <%# <%= image_tag(t.images) %>
 <%# <%end%>
@@ -21,8 +34,10 @@
 <%= @user.birthday.strftime('%Y/%m/%d')%>
 </div>
 
+<% if @user.outpatients.present?%>
 初診日：<%= @first.start_time.strftime('%Y/%m/%d')%>
 最終来院日：<%= @last.start_time.strftime('%Y/%m/%d')%>
+<%end%>
 
 <div class="user-style">
 <%= link_to "カレンダー", user_outpatients_path(@user),class:"user-calendar"%>

@@ -17,6 +17,6 @@ class SomaticsController < ApplicationController
 
   private
   def somatic_params
-    params.require(:somatic).permit(images: []).merge(user_id: @user.id)
+    params.require(:somatic).permit(somaticimages: []).merge(user_id: @user.id)
   end
 end

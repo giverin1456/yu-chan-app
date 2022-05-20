@@ -1,7 +1,7 @@
 <%= form_with(model:[@user, @somatic], local: true) do |f| %>
   <div>
-    <%= f.label :images, '画像' %>
-    <%= f.file_field :images, multiple: true %>
+    <%# <%= f.label :images, '画像' %>
+    <%= f.file_field :somaticimages, multiple: true %>
   </div>
 
     <div class="submit">

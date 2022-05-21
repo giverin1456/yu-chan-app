@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_05_15_093708) do
     t.integer "know_id", null: false
     t.string "email", default: "", null: false
     t.date "birthday", null: false
+    t.text "medical_history"
+    t.text "contraindication"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

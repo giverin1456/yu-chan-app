@@ -51,9 +51,19 @@
  <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlInput1"}) %>
  </div>
 
-        <div class="form-group">
+  <div class="form-group">
   <label for="exampleFormControlInput1">どこで知ったか</label>  
   <%= f.collection_select(:know_id, Know.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlInput1"}) %>
+   </div>
+
+  <div class="form-group">
+  <label for="exampleFormControlInput1">既往歴</label>  
+   <%= f.text_area :medical_history, class:"form-control", id:"exampleFormControlInput1", placeholder:"建物名" %>
+   </div>
+
+  <div class="form-group">
+  <label for="exampleFormControlInput1">禁忌</label>  
+   <%= f.text_area :contraindication, class:"form-control", id:"exampleFormControlInput1", placeholder:"建物名" %>
    </div>
 
   <div class="form-group">

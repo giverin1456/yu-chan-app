@@ -34,6 +34,13 @@
 <div class="user-image-new">
 <a href="/users/<%=@user.id%>/somatics/new">画像追加</a>
 </div>
+<div class="user-image-new">
+ <%= link_to "編集", edit_user_path(@user.id)%>
+</div>
+<div class="user-image-new">
+ <%= link_to "削除", user_path(@user.id), method: :delete, data: {confirm: "削除しまfすか？"} %>
+</div>
+
 </div>
 </div>
 

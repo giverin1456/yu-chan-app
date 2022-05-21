@@ -1,12 +1,12 @@
 <div class="contents row">
   <div class="container">
     <h2>Sign up</h2>
-    <%= form_with model: @admin, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= form_with model: @admin, url: admin_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       
       <div class="field">
        <%= f.label :name %><br />
-      <%= f.text_area :name, class:"input-default", id:"name"%>
+      <%= f.text_field :name, autofocus: true, maxlength: "6" %>
       </div>
 
       <div class="field">

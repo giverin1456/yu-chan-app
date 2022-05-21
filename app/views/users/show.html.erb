@@ -21,8 +21,13 @@
 <%= @user.birthday.strftime('%Y/%m/%d')%>
 </div>
 
+<% if @user.outpatients.present?%>
 初診日：<%= @first.start_time.strftime('%Y/%m/%d')%>
 最終来院日：<%= @last.start_time.strftime('%Y/%m/%d')%>
+<%else%>
+初診日： --
+最終来院日：--
+<%end%>
 
 <div class="user-style">
 <%= link_to "カレンダー", user_outpatients_path(@user),class:"user-calendar"%>

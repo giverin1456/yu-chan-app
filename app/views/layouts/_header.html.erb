@@ -26,9 +26,18 @@
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
-<%= form_with(url: search_users_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
-  <%= form.text_field :keyword, placeholder: "利用者検索", class: "form-control mr-sm-2" %>
-  <%= form.submit "検索", class: "btn btn-outline-success my-2 my-sm-0" %>
-<% end %>
+<%#= form_with(url: search_users_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
+  <%#= form.text_field :keyword, placeholder: "利用者検索", class: "form-control mr-sm-2" %>
+  <%#= form.submit "検索", class: "btn btn-outline-success my-2 my-sm-0" %>
+<%# end %>
+ <% if admin_signed_in?%>
+<%= current_admin.name%>さんようこそ
+<%= link_to image_tag("file",class: "outpatient-image"), edit_admin_path(current_admin.id)%>
+<%= link_to 'ログアウト', destroy_admin_session_path, method: :delete%>
+<%else%>
+<%= link_to "ログイン", new_admin_session_path, class: "post" %>
+ <%= link_to "新規登録", new_admin_registration_path, class: "post" %>
+<%end%>
+
       </div>
     </header>

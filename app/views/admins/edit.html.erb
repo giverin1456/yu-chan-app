@@ -1,21 +1,21 @@
 <div class="contents row">
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>新規登録</h2>
     <%= form_with model: @admin, url:admin_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%# <%= render "devise/shared/error_messages", resource: resource %>
       
       <div class="field">
-       <%= f.label :name %><br />
+       <%= f.label :名前 %><br />
       <%= f.text_field :name, autofocus: true, maxlength: "6" %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録" %>
       </div>
     <% end %>
   </div>

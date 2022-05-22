@@ -21,14 +21,26 @@
 <%= @user.birthday.strftime('%Y/%m/%d')%>
 </div>
 
+<% if @user.outpatients.present?%>
 初診日：<%= @first.start_time.strftime('%Y/%m/%d')%>
 最終来院日：<%= @last.start_time.strftime('%Y/%m/%d')%>
+<%else%>
+初診日： --
+最終来院日：--
+<%end%>
 
 <div class="user-style">
 <%= link_to "カレンダー", user_outpatients_path(@user),class:"user-calendar"%>
 <div class="user-image-new">
 <a href="/users/<%=@user.id%>/somatics/new">画像追加</a>
 </div>
+<div class="user-image-new">
+ <%= link_to "編集", edit_user_path(@user.id)%>
+</div>
+<div class="user-image-new">
+ <%= link_to "削除", user_path(@user.id), method: :delete, data: {confirm: "削除しまfすか？"} %>
+</div>
+
 </div>
 </div>
 
@@ -56,6 +68,14 @@
         <tr>
           <th class="detail-item">どこで知ったか</th>
           <td class="detail-value"><%= @user.know.name%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">既往歴</th>
+          <td class="detail-value"><%= @user.medical_history%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">禁忌</th>
+          <td class="detail-value"><%= @user.contraindication%></td>
         </tr>
         <tr>
           <th class="detail-items">特記</th>

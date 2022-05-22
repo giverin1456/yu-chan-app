@@ -3,10 +3,6 @@
 <% current_admin.name%>
 <%=link_to '登録', new_user_path %>
 <%=link_to '検索', users_path %>
-<%= link_to 'ログアウト', destroy_admin_session_path, method: :delete%>
-<%else%>
-<%= link_to "ログイン", new_admin_session_path, class: "post" %>
- <%= link_to "新規登録", new_admin_registration_path, class: "post" %>
 <%end%>
 
 

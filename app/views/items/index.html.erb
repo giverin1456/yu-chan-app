@@ -1,12 +1,93 @@
 
 <% if admin_signed_in? %>
-<% current_admin.name%>
-<%=link_to '登録', new_user_path %>
-<%=link_to '検索', users_path %>
+
+
+<div class="item-index">
+<%= link_to new_user_path do %>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">利用者登録</div>
+</div>
+</div>
+<%end%>
+
+<%= link_to users_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">利用者情報</div>
+</div>
+</div>
+<%end%>
+
+<%= link_to users_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">分析ツール</div>
+</div>
+</div>
+<%end%>
+
+<%= link_to users_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">予約ツール</div>
+</div>
+</div>
+<%end%>
+
+<%= link_to users_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">管理者編集</div>
+</div>
+</div>
+<%end%>
+
+<%else%>
+<%= link_to new_admin_registration_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">新規登録</div>
+</div>
+</div>
+<%end%>
+
+<%= link_to new_admin_session_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">ログイン</div>
+</div>
+</div>
 <%end%>
 
 
-<%= @now%>月の初診受付
-<% @orders.each do |orders|%>
-<%= orders.name%>
+
 <%end%>
+</div>
+
+
+<%#= @now%>
+<%# @orders.each do |orders|%>
+<%#= orders.name%>
+<%#end%>

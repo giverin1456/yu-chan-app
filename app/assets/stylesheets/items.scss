@@ -6,3 +6,31 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.item-index{
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-index-image{
+  text-align: center;
+  margin: 10px;
+}
+.item-box{
+
+}
+.item-contents{
+  margin: 0 10px;
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.item-image{
+  // width: 100px;
+  height: 50px;
+}
+.item-text{
+  text-align: center;
+  padding: 10px;
+}

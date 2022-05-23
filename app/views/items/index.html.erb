@@ -103,3 +103,24 @@
 <%# @orders.each do |orders|%>
 <%#= orders.name%>
 <%#end%>
+
+<div class="item-index-outpatient">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">来院日</th>
+      <th scope="col">名前</th>
+      <th scope="col">金額</th>
+    </tr>
+  </thead>
+    <% @outpatient.each do |outpatient|%>
+  <tbody>
+    <tr>
+      <td><%= outpatient.start_time.strftime('%Y/%m/%d')%></td>
+      <td><%= link_to outpatient.user.name,user_path(outpatient.user.id)%></td>
+      <td><%= outpatient.price%></td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+</div>

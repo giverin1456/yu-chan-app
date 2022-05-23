@@ -9,6 +9,7 @@ a {
 
 .item-index{
   height: calc(100vh - 100px);
+  flex-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +19,7 @@ a {
   margin: 10px;
 }
 .item-box{
-
+  width: 200px;
 }
 .item-contents{
   margin: 0 10px;

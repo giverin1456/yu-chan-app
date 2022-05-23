@@ -58,6 +58,17 @@
 </div>
 <%end%>
 
+<%= link_to destroy_admin_session_path, method: :delete do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('file',class:"item-image")%>
+</div>
+<div class="item-text">ログアウト</div>
+</div>
+</div>
+<%end%>
+
 <%else%>
 <%= link_to new_admin_registration_path do%>
 <div class="item-box">

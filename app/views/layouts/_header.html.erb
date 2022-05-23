@@ -5,25 +5,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="item">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">admin</a>
+            <a class="nav-link" href="#">管理者編集</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               利用者情報
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">登録</a>
-              <a class="dropdown-item" href="#">検索</a>
+              <a class="dropdown-item" href="#">利用者登録</a>
+              <a class="dropdown-item" href="#">利用者検索</a>
               <%# <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">検索</a>
             </div> %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
 <%#= form_with(url: search_users_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
@@ -31,9 +27,7 @@
   <%#= form.submit "検索", class: "btn btn-outline-success my-2 my-sm-0" %>
 <%# end %>
  <% if admin_signed_in?%>
-<%= current_admin.name%>さんようこそ
-<%= link_to image_tag("file",class: "outpatient-image"), edit_admin_path(current_admin.id)%>
-<%= link_to 'ログアウト', destroy_admin_session_path, method: :delete%>
+<%= current_admin.name%>さんようこそ！
 <%else%>
 <%= link_to "ログイン", new_admin_session_path, class: "post" %>
  <%= link_to "新規登録", new_admin_registration_path, class: "post" %>

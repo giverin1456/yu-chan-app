@@ -29,8 +29,8 @@
  <% if admin_signed_in?%>
 <%= current_admin.name%>さんようこそ！
 <%else%>
-<%= link_to "ログイン", new_admin_session_path, class: "post" %>
- <%= link_to "新規登録", new_admin_registration_path, class: "post" %>
+<%= link_to "ログイン", new_admin_session_path, class: "admin-post" %>
+ <%= link_to "新規登録", new_admin_registration_path, class: "admin-post" %>
 <%end%>
 
       </div>

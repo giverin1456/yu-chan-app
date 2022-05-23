@@ -1,7 +1,6 @@
 
 <% if admin_signed_in? %>
 
-
 <div class="item-index">
 <%= link_to new_user_path do %>
 <div class="item-box">
@@ -9,7 +8,7 @@
 <div class="item-index-image">
 <%= image_tag('file',class:"item-image")%>
 </div>
-<div class="item-text">利用者登録</div>
+<div class="item-text">新患登録</div>
 </div>
 </div>
 <%end%>
@@ -20,7 +19,7 @@
 <div class="item-index-image">
 <%= image_tag('file',class:"item-image")%>
 </div>
-<div class="item-text">利用者情報</div>
+<div class="item-text">患者様情報</div>
 </div>
 </div>
 <%end%>
@@ -47,7 +46,7 @@
 </div>
 <%end%>
 
-<%= link_to users_path do%>
+<%= link_to edit_admin_path(current_admin.id) do%>
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
@@ -70,13 +69,14 @@
 <%end%>
 
 <%else%>
+<div class="item-index">
 <%= link_to new_admin_registration_path do%>
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
 <%= image_tag('file',class:"item-image")%>
 </div>
-<div class="item-text">新規登録</div>
+<div class="item-text">管理者登録</div>
 </div>
 </div>
 <%end%>
@@ -91,6 +91,7 @@
 </div>
 </div>
 <%end%>
+</div>
 
 
 

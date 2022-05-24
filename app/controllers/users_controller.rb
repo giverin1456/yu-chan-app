@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all.order("name")
     @sss = Outpatient.order(created_at: :desc).first
+
+    @now = Time.now.strftime('%Y%m%d').to_i
   end
 
   def new
@@ -24,6 +26,11 @@ class UsersController < ApplicationController
 
     @first = @user.outpatients.order(start_time: :ASC).first
     @last = @user.outpatients.order(start_time: :ASC).last
+
+    now = Time.now.strftime('%Y%m%d').to_i
+    birthday = @user.birthday.strftime('%Y%m%d').to_i
+    @age = (now - birthday)/10000
+    
   end
 
   def edit

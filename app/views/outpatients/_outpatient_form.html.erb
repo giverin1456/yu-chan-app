@@ -1,26 +1,35 @@
 <div class="outpatient-form">
+<div class="outpatient-user-name">
  <%= @user.name%>様
+ </div>
+<div class="outpatient-form-side">
+
  <div class="outpatient-form-contents">
 <%= form_with(model:[@user,@outpatient], local: true) do |form| %>
-  <div class="price">
-    <label class="form-text">利用料金</label>
-    <%= form.text_field :price, class: "outpatient-price-form" %>
+  <div class="form-group">
+   <label for="exampleFormControlInput1">利用料金</label>
+   <%= form.text_field :price, class: "form-control" %>
   </div>
-  <div class="price">
-  <label for="form-text">施術内容</label>  
-     <%= form.collection_select(:medical_category_id, MedicalCategory.all, :id, :name, {}, {class:"outpatient-price-form", id:"medical_form"}) %>
-   </div>
-  <div class="text">
-    <label class="form-text">特記事項</label>
-    <%= form.text_area :text,class: "outpatient-text-form" %>
+  
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">施術内容</label>
+     <%= form.collection_select(:medical_category_id, MedicalCategory.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlSelect1"}) %>
   </div>
-  <div class="start_time">
-    <label class="form-text">日付</label>
-    <%= form.date_select :start_time, {}, {class: 'form-control', style: 'display: inline-block;width: auto;'} %>
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">特記事項</label>
+    <%= form.text_area :text,class: "form-control" %>
   </div>
-  <div class="outpatient-submit">
+      <label for="exampleFormControlSelect1">日程</label>
+    <div class="form-group">
+     <%= form.date_select :start_time, {}, {class: 'form-control', style: 'display: inline-block;width: auto;'} %>
+  </div>
+
+    <div class="outpatient-submit">
     <%= form.submit "登録", class:"outpatient-submit-btn" %>
   </div>
+
 <% end %>
+</div>
 </div>
 </div>

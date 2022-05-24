@@ -12,7 +12,6 @@ class OutpatientsController < ApplicationController
     # @ccc = Outpatient.where("start_time")
     # @now = Time.now
     # @dto = @now.ago(30.days)
-    # @oaoa = Outpatient.where("start_time")
     # @sdk = Outpatient.where("start_time >= ?", @dto)
     # @so = User.left_joins(:outpatients)
     # .where(outpatients: {user_id: @oaoa.user.id})

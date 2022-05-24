@@ -1,26 +1,14 @@
 
 <% if admin_signed_in? %>
 
-
 <div class="item-index">
 <%= link_to new_user_path do %>
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
-<%= image_tag('file',class:"item-image")%>
+<%= image_tag('create',class:"item-image")%>
 </div>
-<div class="item-text">利用者登録</div>
-</div>
-</div>
-<%end%>
-
-<%= link_to users_path do%>
-<div class="item-box">
-<div class="item-contents">
-<div class="item-index-image">
-<%= image_tag('file',class:"item-image")%>
-</div>
-<div class="item-text">利用者情報</div>
+<div class="item-text">新患登録</div>
 </div>
 </div>
 <%end%>
@@ -29,7 +17,18 @@
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
-<%= image_tag('file',class:"item-image")%>
+<%= image_tag('user',class:"item-image")%>
+</div>
+<div class="item-text">患者様情報</div>
+</div>
+</div>
+<%end%>
+
+<%= link_to users_path do%>
+<div class="item-box">
+<div class="item-contents">
+<div class="item-index-image">
+<%= image_tag('gurahu',class:"item-image")%>
 </div>
 <div class="item-text">分析ツール</div>
 </div>
@@ -40,18 +39,18 @@
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
-<%= image_tag('file',class:"item-image")%>
+<%= image_tag('yoyaku',class:"item-image")%>
 </div>
 <div class="item-text">予約ツール</div>
 </div>
 </div>
 <%end%>
 
-<%= link_to users_path do%>
+<%= link_to edit_admin_path(current_admin.id) do%>
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
-<%= image_tag('file',class:"item-image")%>
+<%= image_tag('admin',class:"item-image")%>
 </div>
 <div class="item-text">管理者編集</div>
 </div>
@@ -62,7 +61,7 @@
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
-<%= image_tag('file',class:"item-image")%>
+<%= image_tag('logout',class:"item-image")%>
 </div>
 <div class="item-text">ログアウト</div>
 </div>
@@ -70,13 +69,14 @@
 <%end%>
 
 <%else%>
+<div class="item-index">
 <%= link_to new_admin_registration_path do%>
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
 <%= image_tag('file',class:"item-image")%>
 </div>
-<div class="item-text">新規登録</div>
+<div class="item-text">管理者登録</div>
 </div>
 </div>
 <%end%>
@@ -91,6 +91,7 @@
 </div>
 </div>
 <%end%>
+</div>
 
 
 
@@ -102,3 +103,24 @@
 <%# @orders.each do |orders|%>
 <%#= orders.name%>
 <%#end%>
+
+<div class="item-index-outpatient">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">来院日</th>
+      <th scope="col">名前</th>
+      <th scope="col">金額</th>
+    </tr>
+  </thead>
+    <% @outpatient.each do |outpatient|%>
+  <tbody>
+    <tr>
+      <td><%= outpatient.start_time.strftime('%Y/%m/%d')%></td>
+      <td><%= link_to outpatient.user.name,user_path(outpatient.user.id)%></td>
+      <td>¥<%= outpatient.price%></td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+</div>

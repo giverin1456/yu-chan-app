@@ -4,11 +4,12 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: black ;
 }
 
 .item-index{
-  height: calc(100vh - 100px);
+  // margin-top: 100px;
+  width: 100vw;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
@@ -19,11 +20,13 @@ a {
   margin: 10px;
 }
 .item-box{
-  width: 200px;
+  width: calc(80vw/3);
+  margin-top: 50px;
 }
 .item-contents{
-  margin: 0 10px;
-  width: 200px;
+  margin: 0 auto;
+  width: 70%;
+  padding: 5px;
   border: 1px solid gray;
   border-radius: 10px;
 }
@@ -33,5 +36,16 @@ a {
 }
 .item-text{
   text-align: center;
-  padding: 10px;
+  padding: 0 0 10px 0;
+}
+
+// heaader右部分
+.admin-post{
+  margin-right: 15px;
+}
+
+// item/index来院情報
+.item-index-outpatient{
+  width: 75%;
+  margin: 50px auto;
 }

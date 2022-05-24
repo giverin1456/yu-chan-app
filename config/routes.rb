@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admins
   root to: 'items#index'
+  resources :items do
+    collection do
+      get 'information'
+    end
+  end
   resources :admins
   resources :users do
     resources :outpatients

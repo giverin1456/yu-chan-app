@@ -2,8 +2,10 @@ class UsersController < ApplicationController
   def index
     @users = User.all.order("name")
     @sss = Outpatient.order(created_at: :desc).first
-
     @now = Time.now.strftime('%Y%m%d').to_i
+
+    # @ttt = User.left_joins(:outpatients).where(outpatients: {user_id: user.id})
+    # @month_record = User.outpatients.group("MONTH(start_time)")
   end
 
   def new
@@ -30,7 +32,7 @@ class UsersController < ApplicationController
     now = Time.now.strftime('%Y%m%d').to_i
     birthday = @user.birthday.strftime('%Y%m%d').to_i
     @age = (now - birthday)/10000
-    
+
   end
 
   def edit

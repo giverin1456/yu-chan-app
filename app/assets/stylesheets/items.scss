@@ -4,7 +4,7 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: black ;
 }
 
 .item-index{
@@ -26,6 +26,7 @@ a {
 .item-contents{
   margin: 0 auto;
   width: 70%;
+  padding: 5px;
   border: 1px solid gray;
   border-radius: 10px;
 }
@@ -35,7 +36,7 @@ a {
 }
 .item-text{
   text-align: center;
-  padding: 10px;
+  padding: 0 0 10px 0;
 }
 
 // heaader右部分

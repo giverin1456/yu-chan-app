@@ -15,11 +15,11 @@
   <tbody>
     <% @users.each do |user|%>
     <tr>
-    <td><%= image_tag(user.image,class:"user-index-image") %></td>
-      <th scope="row"><%=user.id%></th>
-      <td><%= link_to (user.name),user_path(user.id)%></td>
-      <td><%= user.gender.name%></td>
-      <td><%= user.birthday.strftime('%Y/%m/%d')%>（<%=(@now - (user.birthday.strftime('%Y%m%d')).to_i)/10000%>歳）</td>
+    <td class="user-list"><%= image_tag(user.image,class:"user-index-image") %></td>
+       <td class="user-list"><%= user.id%></td>
+      <td class= "user-list"><%= link_to (user.name),user_path(user.id)%></td>
+      <td class="user-list"><%= user.gender.name%></td>
+      <td class="user-list"><%= user.birthday.strftime('%Y/%m/%d')%>（<%=(@now - (user.birthday.strftime('%Y%m%d')).to_i)/10000%>歳）</td>
     </tr>
     <%end%>
   </tbody>

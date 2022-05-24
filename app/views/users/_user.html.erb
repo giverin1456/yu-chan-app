@@ -1,22 +1,28 @@
 
-
 <div class="user-index">
+ <div class="user-index-list">
 
-<div class="user-index-contents">
-
-<div class="user-index-main">
-<div class="user-index-list">
-<% @users.each do |user|%>
-<div class="user-index-group">
- <%= link_to user_path(user.id) do%>
-<%= image_tag user.image,class:"user-index-image"%>
-<div class="user-index-name">
-<%= user.name%>（<%=user.kana%>）様
-</div>
-</div>
-<%end%>
-<%end%>
-</div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+    <th scope="col"></th>
+      <th scope="col">ID</th>
+      <th scope="col">名前</th>
+      <th scope="col">初診日</th>
+      <th scope="col">最終来院日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+    <tr>
+    <td><%= image_tag(user.image,class:"user-index-image") %></td>
+      <th scope="row"><%=user.id%></th>
+      <td><%= link_to (user.name),user_path(user.id)%></td>
+      <td><%= user.gender.name%></td>
+      <td><%= user.birthday.strftime('%Y/%m/%d')%>（<%=(@now - (user.birthday.strftime('%Y%m%d')).to_i)/10000%>歳）</td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
 </div>
 </div>

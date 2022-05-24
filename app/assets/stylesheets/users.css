@@ -1,30 +1,24 @@
 /* user/index */
-.user-index{
-
-}
-.user-index-contents{
-  display: flex;
-}
 .side-bar{
   width: 25%;
 }
-.user-index-list{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.user-index{
+  margin-top: 20px;
+  text-align: center;
 }
-.user-index-group{
-  margin: 20px;
+.user-index-list{
+  width: 70%;
+  margin: 0 auto;
 }
 .user-index-image{
-  width: 250px;
-  height: 250px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
 }
-.user-index-name{
-  text-align: center;
-  margin-top: 5px;
+.table td, table th {
+  vertical-align: middle !important;
 }
+
 
 .search-form{
   text-align: center;
@@ -35,6 +29,14 @@
 }
 
 /* user/show */
+.user-show-informations{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.user-show-information{
+  padding: 10px;
+}
 
 .user-top-contents{
   display: flex;
@@ -54,21 +56,38 @@
 }
 .user-style{
   display: flex;
+  margin-top: 30px;
 }
 .user-calendar{
-  border: 1px solid black;
-  background-color: rgb(125, 249, 116);
+  border: 1px solid gray;
+  background-color: #badcf8;
   margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 5px;
 }
 .user-image-new{
-  border: 1px solid black;
-  background-color: yellow;
+  border: 1px solid gray;
+  background-color: #badcf8;
   margin: 10px;
-  padding: 10px;
+  padding: 10px 25px;
   border-radius: 5px;
 }
+.user-name{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.user-gender{
+  margin-bottom: 10px;
+}
+.user-show-visit{
+  display: flex;
+  margin: 10px 0;
+}
+
+
+
+
+
 
 /* user/new */
 .user-new{
@@ -115,3 +134,5 @@
   width: 40%;
   margin: 50px auto;
 }
+
+

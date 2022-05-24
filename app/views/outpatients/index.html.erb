@@ -3,12 +3,11 @@
 <%= render partial: "outpatient_form"%>
 <%= render partial: "outpatient_text"%>
 
-<%# <div class="outpatient-history"> %>
-<%# <% @outpatients.each do |t|%>
-<%# <%= t.price%>
-<%# <%= t.text%>
-<%# <%= t.start_time.strftime('%Y/%m/%d')%>
-<%# <%end%>
+<%#=  @sales.each do |sale|%>
+<%#= sale.price%>
+<%#end%>
+
+<%=@month_record.sum(:price)[Date.today.month]%>
 
 </div>
 </div>

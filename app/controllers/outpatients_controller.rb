@@ -4,13 +4,20 @@ class OutpatientsController < ApplicationController
     @user = User.find(params[:user_id])
     @outpatient = Outpatient.new
     @outpatients = Outpatient.where(user_id: @user.id)
-    @first = @user.outpatients.order(start_time: :ASC).first
-    @sales = Outpatient.group("MONTH(price)").sum(:price)
 
-    # now = Date.today.month
-    # @cccs = Outpatient.where("start_time <= ?", Time.now)
-    # @ccc = Outpatient.where("start_time")
-    # @now = Time.now
+     # ハッシュとして全userそれぞれのpriceを取得できる→しかしハッシュのまま
+    @sales = Outpatient.group(:user_id).sum(:price)
+    @ttt = User.joins(:outpatients).group(:user_id).sum(:price)
+
+    @month_record = @user.outpatients.group("MONTH(start_time)")
+
+
+    now = Date.today.month
+    @now = Time.now
+    
+    @cccs = Outpatient.where("start_time <= ?", @now)
+    @ccc = Outpatient.where("start_time")
+
     # @dto = @now.ago(30.days)
     # @sdk = Outpatient.where("start_time >= ?", @dto)
     # @so = User.left_joins(:outpatients)

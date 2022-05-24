@@ -1,0 +1,23 @@
+新患情報
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">名前</th>
+      <th scope="col">初診日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @orders.each do |orders|%>
+      <th scope="row">1</th>
+      <td><%= orders.name%></td>
+      <td>Otto</td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+
+
+
+

@@ -46,6 +46,22 @@
 .outpatient-form{
   width: 25%;
 }
+.outpatient-user-name{
+  text-align: center;
+  height: 60px;
+  width: 80%;
+  margin: 20px auto 30px;
+  font-size: 20px;
+  border: 1px solid gray;
+  background-color: #badcf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outpatient-form-side{
+  width: 80%;
+  margin: 0 auto;
+}
 .outpatient-form-contents{
   margin-left: 20px;
 }
@@ -53,8 +69,8 @@
   margin: 30px 0 0 0;
 }
 .outpatient-submit-btn{
-  padding:2px 5px;
-  background-color: rgb(107, 134, 255);
+  padding:5px 10px;
+  background-color: #badcf8;
 }
 select#outpatient_start_time_2i {
   width: 45px;

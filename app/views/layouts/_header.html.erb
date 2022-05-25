@@ -1,25 +1,23 @@
 <header class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">ゆうちゃん</a>
+      <%= link_to "管理アプリ",root_path,class:"navbar-brand"%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <a class="nav-link" href="item">Home <span class="sr-only">(current)</span></a>
+          <%= link_to "HOME",root_path,class:"nav-link"%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">管理者編集</a>
+            <%# <a class="nav-link" href="#">管理者編集</a> %>
+            <%= link_to "管理者情報",edit_admin_path(current_admin),class:"nav-link"%>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               利用者情報
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">利用者登録</a>
-              <a class="dropdown-item" href="#">利用者検索</a>
-              <%# <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">検索</a>
-            </div> %>
+              <%= link_to "新患登録",new_user_path,class:"nav-link"%>
+              <%= link_to "患者様情報",users_path,class:"nav-link"%>
           </li>
         </ul>
 <%#= form_with(url: search_users_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>

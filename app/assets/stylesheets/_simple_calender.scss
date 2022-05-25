@@ -89,7 +89,7 @@ select#outpatient_start_time_2i {
 
 // outpatients/show
 .detail-table {
-  margin: 25px auto;
+  margin: 15px auto;
   width: 80%;
 }
 .detail-item {
@@ -101,7 +101,7 @@ select#outpatient_start_time_2i {
 }
 .detail-value {
   width: 90%;
-  padding: 20px;
+  padding: 10px 20px;
   border: 1px solid gray;
   font-size: 14px;
   color: #3b4043;
@@ -116,7 +116,7 @@ select#outpatient_start_time_2i {
 }
 .detail-values {
   width: 90%;
-  height: 350px;
+  height: 318px;
   padding: 20px;
   border: 1px solid gray;
   font-size: 14px;
@@ -125,29 +125,28 @@ select#outpatient_start_time_2i {
 
 .outpatient-btn{
   text-align: end;
-  margin: 10px 0;
   display: flex;
   justify-content: center;
 }
 .outpatient-btn-edit{
-  background-color: rgb(131, 255, 140);
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 2px 10px;
+  background-color: rgb(199, 255, 203);
+  border: 2px solid green;
+  border-radius: 2px;
+  padding: 2px 15px;
 }
 .outpatient-btn-delete{
-  background-color: rgb(253, 151, 151);
-  border: 1px solid black;
-  border-radius: 5px;
+  background-color: rgb(255, 199, 199);
+  border: 2px solid red;
+  border-radius: 2px;
   margin-left: 10px;
-  padding: 2px 10px;
+  padding: 2px 15px;
 }
 .outpatient-btn-return{
-  background-color: rgb(119, 177, 244);
-  border: 1px solid black;
-  border-radius: 5px;
+  background-color: rgb(170, 203, 255);
+  border: 2px solid blue;
+  border-radius: 2px;
   margin-left: 10px;
-  padding: 2px 10px;
+  padding: 2px 15px;
 }
 
 .aa{
@@ -175,4 +174,5 @@ select#outpatient_start_time_2i {
   white-space: pre-line;
   word-wrap: break-word;
   text-align: left;
+  // overflow-x: scroll;
 }

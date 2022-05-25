@@ -7,17 +7,17 @@
  <div class="outpatient-form-contents">
 <%= form_with(model:[@user,@outpatient], local: true) do |form| %>
   <div class="form-group">
-   <label for="exampleFormControlInput1">利用料金</label>
+   <label for="exampleFormControlInput1">料金</label>
    <%= form.text_field :price, class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <label for="exampleFormControlSelect1">施術内容</label>
+    <label for="exampleFormControlSelect1">施術</label>
      <%= form.collection_select(:medical_category_id, MedicalCategory.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlSelect1"}) %>
   </div>
 
     <div class="form-group">
-    <label for="exampleFormControlSelect1">特記事項</label>
+    <label for="exampleFormControlSelect1">特記</label>
     <%= form.text_area :text,class: "form-control" %>
   </div>
       <label for="exampleFormControlSelect1">日程</label>

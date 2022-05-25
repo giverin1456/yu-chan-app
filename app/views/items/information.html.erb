@@ -1,23 +1,23 @@
+<div class="information-view">
 新患情報
 <table class="table table-sm">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">名前</th>
-      <th scope="col">初診日</th>
+      <th scope="col">生年月日</th>
     </tr>
   </thead>
   <tbody>
     <tr>
     <% @orders.each do |orders|%>
-      <th scope="row">1</th>
-      <td><%= orders.name%></td>
-      <td>Otto</td>
+      <td ><%= orders.id%></td>
+      <td><%= link_to (orders.name),user_path(orders.id)%></td>
+      <td><%= orders.birthday.strftime('%Y/%m/%d')%>（<%=(@now.to_i - (orders.birthday.strftime('%Y%m%d')).to_i)/10000%>歳）</td>
     </tr>
   </tbody>
   <%end%>
 </table>
-
-
+</div>
 
 

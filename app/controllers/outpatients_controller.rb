@@ -36,7 +36,7 @@ class OutpatientsController < ApplicationController
     if @outpatient.save
       redirect_to "/users/#{@user.id}/outpatients"
     else
-      redirect_to "/users/#{@outpatient.user_id}"
+      redirect_to "/users/#{@outpatient.user_id}/outpatients"
     end
   end
 

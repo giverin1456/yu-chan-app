@@ -113,7 +113,7 @@
       <th scope="col">金額</th>
     </tr>
   </thead>
-    <% @outpatient.each do |outpatient|%>
+    <% @item.each do |outpatient|%>
   <tbody>
     <tr>
       <td><%= outpatient.start_time.strftime('%Y/%m/%d')%></td>
@@ -123,4 +123,9 @@
   </tbody>
   <%end%>
 </table>
+<div class="kaminari">
+<div class="kaminari-list">
+<%= paginate @item, theme: 'twitter-bootstrap-4' %>
+</div>
+</div>
 </div>

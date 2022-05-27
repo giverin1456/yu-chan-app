@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
     @admin = current_admin
     @now = Date.today.month
     @outpatient = Outpatient.all.order(start_time: :DESC)
+
+    @item = @outpatient.page(params[:page]).per(5)
   end
 
   def information

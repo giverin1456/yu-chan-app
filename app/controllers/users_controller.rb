@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @sss = Outpatient.order(created_at: :desc).first
     @now = Time.now.strftime('%Y%m%d').to_i
 
-    @item = @users.page(params[:page]).per(4)
+    @item = @users.page(params[:page]).per(15)
 
     # @ttt = User.left_joins(:outpatients).where(outpatients: {user_id: user.id})
     # @month_record = User.outpatients.group("MONTH(start_time)")

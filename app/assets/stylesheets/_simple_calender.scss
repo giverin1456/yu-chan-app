@@ -170,9 +170,11 @@ select#outpatient_start_time_2i {
 }
 
 .detail-values-text {
-  width: 100%;
+  width: 153px;
   white-space: pre-line;
   word-wrap: break-word;
   text-align: left;
+  height: 100%;
+  overflow-x: scroll;
   // overflow-x: scroll;
 }

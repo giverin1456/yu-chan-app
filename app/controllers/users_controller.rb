@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
     @users = User.all.order("name")
     @sss = Outpatient.order(created_at: :desc).first
@@ -66,5 +67,9 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :kana, :gender_id, :phone_number, :postal_code, :prefecture_id, :city, :street, :building, :know_id, :email, :birthday, :text, :medical_history, :contraindication, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

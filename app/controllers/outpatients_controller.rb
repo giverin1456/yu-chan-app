@@ -1,7 +1,7 @@
 class OutpatientsController < ApplicationController
+  before_action :set_outpatient, only: [:index, :show, :edit, :update]
 
   def index
-    @user = User.find(params[:user_id])
     @outpatient = Outpatient.new
     @outpatients = Outpatient.where(user_id: @user.id)
 
@@ -42,19 +42,16 @@ class OutpatientsController < ApplicationController
 
   def show
     @outpatient = Outpatient.find(params[:id])
-    @user = User.find(params[:user_id])
     @outpatients = Outpatient.where(user_id: @user.id)
   end
 
   def edit
     @outpatient = Outpatient.find(params[:id])
-    @user = User.find(params[:user_id])
     @outpatients = Outpatient.where(user_id: @user.id)
   end
 
   def update
     @outpatient = Outpatient.find(params[:id])
-    @user = User.find(params[:user_id])
     if @outpatient.update(outpatient_params)
       redirect_to "/users/#{@user.id}/outpatients/#{@outpatient.id}"
     else
@@ -74,5 +71,9 @@ class OutpatientsController < ApplicationController
   private
   def outpatient_params
     params.require(:outpatient).permit(:price, :text, :medical_category_id, :start_time).merge(user_id: params[:user_id])
+  end
+
+  def set_outpatient
+    @user = User.find(params[:user_id])
   end
 end

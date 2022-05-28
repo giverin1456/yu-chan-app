@@ -84,7 +84,30 @@
   display: flex;
   margin: 10px 0;
 }
-
+.detail-user-item{
+  width: 90%;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid gray;
+  font-size: 14px;
+  color: #3b4043;
+  background-color: #badcf8;
+}
+.detail-values-user-text{
+  width: 100%;
+  white-space: pre-line;
+  word-wrap: break-word;
+  text-align: left;
+  overflow-x: scroll;
+}
+.detail-values-user {
+  width: 90%;
+  /* height: 318px; */
+  padding: 20px;
+  border: 1px solid gray;
+  font-size: 14px;
+  color: #3b4043;
+}
 
 
 

@@ -69,6 +69,9 @@
 <%end%>
 
 <%else%>
+<div class="top-image">
+<%= image_tag("topimage",class:"top-image-contents")%>
+</div>
 <div class="item-index">
 <%= link_to new_admin_registration_path do%>
 <div class="item-box">
@@ -103,7 +106,7 @@
 <%# @orders.each do |orders|%>
 <%#= orders.name%>
 <%#end%>
-
+ <% if admin_signed_in?%>
 <div class="item-index-outpatient">
 <table class="table">
   <thead>
@@ -129,3 +132,4 @@
 </div>
 </div>
 </div>
+<%end%>

@@ -1,4 +1,5 @@
 class OutpatientsController < ApplicationController
+  before_action :authenticate_admin!, only: [:index, :new, :show, :create, :edit, :update]
   before_action :set_outpatient, only: [:index, :show, :edit, :update]
 
   def index

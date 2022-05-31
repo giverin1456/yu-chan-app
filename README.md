@@ -83,7 +83,7 @@ VScode
 <br>
 
 # 課題や今後実装したい機能
-
+課題としては、来院者の情報のデータ（性別、年齢、どこで知ったかなど）や来院時のデータ（どのような施術を行なったか、来院数など）を分析し、集客に繋げるためのツールを作成できていないところです。また、予約システムの導入もできていません。整骨院を経営するにあたって、必要な機能を追加実装して整骨院の経営を助けられるようなアプリを作成したいです。
 
 <br>
 
@@ -96,7 +96,7 @@ VScode
  - 来院者全体の情報を表示し分析できる機能
  - 1ヶ月間来院がない方をリスト化
 - javascriptで動きをつける
-
+- Rspecでテスト
 
 <br>
 
@@ -126,7 +126,7 @@ VScode
 - has_many :somatics
 - has_one_attached :image
 
-
+<br>
 
 ## outpatients テーブル
 
@@ -140,6 +140,8 @@ VScode
 ### Association
 - belongs_to :user
 
+<br>
+
 
 ## somatics テーブル
 
@@ -151,6 +153,7 @@ VScode
 - belongs_to :user
 - has_many_attached :images
 
+<br>
 
 ## admins テーブル
 

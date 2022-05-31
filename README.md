@@ -118,9 +118,13 @@ VScode
 | email               | string | null: false ,unique: true|
 | birthday            | date   | null: false              |
 | text                | text   |                          |
+| medical_history     | text   |                          |
+| contraindication    | text   |                          |
 
 ### Association
 - has_many :outpatients
+- has_many :somatics
+- has_one_attached :image
 
 
 
@@ -135,3 +139,26 @@ VScode
 
 ### Association
 - belongs_to :user
+
+
+## somatics テーブル
+
+| Column              | Type       | Options                        |
+| ------------------  | ---------  | -----------------------------  |
+| user_id             | references | null: false, foreign_key:true  |
+
+### Association
+- belongs_to :user
+- has_many_attached :images
+
+
+## admins テーブル
+
+| Column              | Type       | Options                        |
+| ------------------  | ---------  | -----------------------------  |
+| name                | string     | null: false                    |
+| email               | string     | null: false ,unique: true      |
+
+### Association
+- belongs_to :user
+- has_many_attached :images

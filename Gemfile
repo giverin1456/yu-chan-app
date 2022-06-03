@@ -61,3 +61,4 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem "aws-sdk-s3", require: false

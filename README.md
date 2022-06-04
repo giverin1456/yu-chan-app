@@ -30,23 +30,29 @@ https://yu-chan-app.herokuapp.com/
 <br>
 
 # 制作背景(意図)
-整骨院を経営している友人から来院者を管理できるアプリを作って欲しいとの依頼があったため、作成しました。
+整骨院を経営している友人から来院者を管理できるアプリを作って欲しいとの依頼があったため作成しました。
 <br>
 
 # DEMO
 
 ## トップページ
+[![Image from Gyazo](https://i.gyazo.com/f7a28f9e8e8d21dea55785b23a5aa611.gif)](https://gyazo.com/f7a28f9e8e8d21dea55785b23a5aa611)
 新患登録、患者様情報、分析ツール、予約ツール、管理者編集、ログアウトのアイコンがあります。
 また、直近の来院者を15件まで表示します。(ページネーション)
 ## USER新規登録ページ
+[![Image from Gyazo](https://i.gyazo.com/47bfbf9d44eaa51f86da98e9c3c3a586.gif)](https://gyazo.com/47bfbf9d44eaa51f86da98e9c3c3a586)
 新患の情報を入力することができます。基本情報から、既往歴や禁忌(NG治療)、特記事項などを入力することができます。
 ## USER一覧ページ
+[![Image from Gyazo](https://i.gyazo.com/72445cc5553274a7683738445881aca2.png)](https://gyazo.com/72445cc5553274a7683738445881aca2)
 患者様の一覧ページです。ID、名前、性別、生年月日(年齢)を一覧表示しています。
 ## USERの詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/cacf28e3473075302504788688a1bf3a.gif)](https://gyazo.com/cacf28e3473075302504788688a1bf3a)
 登録した患者様の詳細情報を見ることができます。USER画像は主に患者様の姿勢の写真を登録します。
 ## USERごとのカレンダーページ
+[![Image from Gyazo](https://i.gyazo.com/e2670ce231710322ea97e5103986883d.gif)](https://gyazo.com/e2670ce231710322ea97e5103986883d)
 USERごとにそれぞれカレンダーを表示します。日程を選択し、料金、施術内容、特記事項を登録することができます。登録した日にちの枠は黄色になり、使用料金と特記事項を入力した場合はイラストが表示されます。料金と特記事項のイラストをクリックすると、詳細ページに遷移します。
 ## カレンダー詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/01d73a43348cd2275a76f7d23b03c4be.gif)](https://gyazo.com/01d73a43348cd2275a76f7d23b03c4be)
 入力した情報を見ることができます。また、編集と削除を行うことができます。
 
 <br>

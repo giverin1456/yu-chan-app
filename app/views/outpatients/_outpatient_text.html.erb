@@ -4,7 +4,7 @@
      <div class="outpatient-price-image">
     <a href="/users/<%=@user.id%>/outpatients/<%=event.id%>">¥<%= event.price %></a>
     <% if event.text.present?%>
-    <a href="/users/<%=@user.id%>/outpatients/<%=event.id%>"><%=image_tag("file" ,class:"outpatient-image") %></a>
+    <a href="/users/<%=@user.id%>/outpatients/<%=event.id%>"><%=image_tag("file.png" ,class:"outpatient-image") %></a>
     </div>
     <%end%>
   <% end %>

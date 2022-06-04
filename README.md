@@ -15,6 +15,7 @@
 <br>
 
 # 本番環境
+https://yu-chan-app.herokuapp.com/
 
 
 ### サイトに入るためのパスワード

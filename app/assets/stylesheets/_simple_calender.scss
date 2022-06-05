@@ -1,8 +1,10 @@
 .simple-calendar {
   width: 65%;
+  margin-left: 20px;
 
   .day {
     border: 1px solid black;
+    height: 92px;
   }
 
   .wday-0 {

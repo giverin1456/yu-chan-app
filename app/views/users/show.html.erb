@@ -84,15 +84,31 @@
           <th class="detail-item">どこで知ったか</th>
           <td class="detail-value"><%= @user.know.name%></td>
         </tr>
+        <% if @user.medical_history.present? %>
         <tr>
           <th class="detail-item">既往歴</th>
           <td class="detail-value"><%= @user.medical_history%></td>
         </tr>
+        <%else%>
+         <tr>
+          <th class="detail-item">既往歴</th>
+          <td class="detail-value">--</td>
+        </tr>
+        <%end%>
+        <%if @user.contraindication.present?%>
         <tr>
           <th class="detail-item">禁忌</th>
           <td class="detail-value"><%= @user.contraindication%></td>
         </tr>
         <tr>
+        <%else%>
+                <tr>
+          <th class="detail-item">禁忌</th>
+          <td class="detail-value">--</td>
+        </tr>
+        <tr>
+        <%end%>
+        <%if @user.text.present?%>
           <th class="detail-items">特記</th>
           <td class="detail-values-user">
           <div class="detail-values-user-text">
@@ -100,6 +116,14 @@
           </div>
           </td>
         </tr>
+          <%else%>
+          <th class="detail-items">特記</th>
+          <td class="detail-values-user">
+          <div class="detail-values-user-text">--
+          </div>
+          </td>
+        </tr>
+        <%end%>
       </tbody>
     </table>
     </div>

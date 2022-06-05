@@ -62,8 +62,8 @@
 .user-calendar{
   border: 1px solid gray;
   background-color: #badcf8;
-  margin: 10px;
-  padding: 10px 20px;
+  /* margin: 10px; */
+  padding: 10px 60px;
   border-radius: 5px;
 }
 .user-image-new{

@@ -8,10 +8,14 @@
 <%= image_tag @user.image ,class: "user-image"%>
 <div class="user-show-informations">
 <div class="user-show-information">
+<div class="user-show-edit">
  <%= link_to "編集", edit_user_path(@user.id)%>
 </div>
+</div>
 <div class="user-show-information">
+<div class="user-show-delete">
  <%= link_to "削除", user_path(@user.id), method: :delete, data: {confirm: "削除しまfすか？"} %>
+</div>
 </div>
 </div>
 </div>

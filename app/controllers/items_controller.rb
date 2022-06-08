@@ -42,6 +42,6 @@ class ItemsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:item).permit(:day, :time, :user_id, :start_time)
+    params.require(:item).permit(:day, :time, :name, :start_time)
   end
 end

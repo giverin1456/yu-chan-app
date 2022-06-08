@@ -49,11 +49,10 @@ ActiveRecord::Schema.define(version: 2022_06_07_115353) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "day", null: false
     t.string "time", null: false
-    t.bigint "user_id", null: false
+    t.string "name", null: false
     t.datetime "start_time", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "outpatients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

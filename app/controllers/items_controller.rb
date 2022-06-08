@@ -13,6 +13,11 @@ class ItemsController < ApplicationController
     @day = params[:day]
     @time = params[:time]
     @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
+
+    message = Item.check_reservation_day(@day.to_date)
+    if !!message
+      redirect_to @reservation, flash: { alert: message }
+    end
   end
 
   def show

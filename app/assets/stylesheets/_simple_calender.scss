@@ -183,3 +183,41 @@ select#outpatient_start_time_2i {
 
 
 // week
+.simple-calendars {
+  width: 100%;
+
+  .day {
+  }
+
+  .wday-0 {
+    background-color: #f9cece;
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {
+    background-color: #bcd8ff;
+  }
+
+  .today {
+    background-color: rgb(137, 255, 137);
+  }
+  .past {
+  }
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background-color: rgb(217, 217, 217);
+  }
+  .next-month {
+    background-color: rgb(217, 217, 217);
+  }
+  .current-month {}
+
+  .has-events {
+  }
+}

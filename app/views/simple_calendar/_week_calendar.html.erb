@@ -1,4 +1,4 @@
-<%# <div class="simple-calendars"> %>
+<div class="simple-calendars">
   <div class="calendar-heading">
     <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
     <% if calendar.number_of_weeks == 1 %>
@@ -38,7 +38,7 @@
             <% week.each do |day| %>
               <td>
                 <% if check_reservation(reservations, day, time) %>
-                  <%= link_to '×',root_path%>
+                  <%= link_to '×', root_path%>
                 <% else %>
                   <%= link_to new_item_path(day: day, time: time) do %>
                     <%= '○' %>
@@ -51,4 +51,11 @@
       <% end %>
     </tbody>
   </table>
-<%# </div> %>
+</div>
+
+<% @aa.each do |aa|%>
+<%=aa.name%>
+<%=aa.day%>
+
+<%=aa.time%>
+<%end%>

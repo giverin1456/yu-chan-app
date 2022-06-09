@@ -6,6 +6,9 @@ class ItemsController < ApplicationController
     @item = @outpatient.page(params[:page]).per(15)
 
     @reservations = Item.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    @aa = Item.all.where("day >= ?", @bbb)
+    now = Time.current
+    @bbb = now.ago(3.days).strftime('%Y-%m-%d')
   end
 
   def new

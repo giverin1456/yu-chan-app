@@ -36,9 +36,9 @@ class Item < ApplicationRecord
     # DBアクセスを減らすために必要なデータを配列にデータを突っ込んでます
     reservation_data = []
     reservations.each do |reservation|
-      reservations_hash = {}
-      reservations_hash.merge!(day: reservation.day.strftime("%Y-%m-%d"), time: reservation.time)
-      reservation_data.push(reservations_hash)
+    reservations_hash = {}
+    reservations_hash.merge!(day: reservation.day.strftime("%Y-%m-%d"), time: reservation.time)
+    reservation_data.push(reservations_hash)
     end
     reservation_data
   end

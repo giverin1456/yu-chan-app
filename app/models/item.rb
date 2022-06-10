@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
+  belongs_to :user
+  
 
-  validate :name
   validate :date_before_start
   validate :date_current_today
   validate :date_three_month_end
@@ -38,7 +39,7 @@ class Item < ApplicationRecord
     reservation_data = []
     reservations.each do |reservation|
     reservations_hash = {}
-    reservations_hash.merge!(day: reservation.day.strftime("%Y-%m-%d"), time: reservation.time, name: reservation.name, id:reservation.id)
+    reservations_hash.merge!(day: reservation.day.strftime("%Y-%m-%d"), time: reservation.time, name: reservation.user.name, id:reservation.id)
     reservation_data.push(reservations_hash)
     end
     reservation_data

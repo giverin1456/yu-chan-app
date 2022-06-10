@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :outpatients
   has_many :somatics
   has_one_attached :image
+  has_many :items
 
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :know

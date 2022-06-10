@@ -8,7 +8,8 @@
       <%#= render 'layouts/error_messages', model: form.object %>
        <div class="day form-group">
         <%= form.label :name, '名前' %>
-        <%= form.text_field :name, class: 'form-control'%>
+        <%#= form.text_field :name, class: 'form-control'%>
+        <%= form.collection_select(:user_id, User.all, :id, :name, {}, {class:"form-control", id:"exampleFormControlInput1"}) %>
       </div>
 
       <div class="day form-group">
@@ -19,7 +20,6 @@
         <%= form.label :time, '時間' %>
         <%= form.text_field :time, class: 'form-control', value: @time, readonly: true %>
       </div>
-      <%# <%= form.hidden_field :user_id, value: current_admin.id %>
       <%= form.hidden_field :start_time, value: @start_time %>
       <div class="submit">
         <%= form.submit value: '予約する', class: 'btn btn-primary mx-auto d-block' %>

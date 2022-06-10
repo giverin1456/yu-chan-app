@@ -49,10 +49,11 @@ ActiveRecord::Schema.define(version: 2022_06_07_115353) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "day", null: false
     t.string "time", null: false
-    t.string "name", null: false
+    t.bigint "user_id", null: false
     t.datetime "start_time", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "outpatients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_115353) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "users"
   add_foreign_key "outpatients", "users"
   add_foreign_key "somatics", "users"
 end

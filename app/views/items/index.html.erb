@@ -123,7 +123,7 @@
   <tbody>
     <tr>
       <td><%= reserve.time%></td>
-      <td><%= reserve.name%></td>
+      <td><%= link_to reserve.user.name,user_path(reserve.user.id)%></td>
     </tr>
   </tbody>
   <%end%>

@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @item = @outpatient.page(params[:page]).per(15)
 
     
-    @reserve = Item.all.where(day: Date.current.since(1.day)).order("time")
+    @reserve = Item.all.where(day: Date.current).order("time")
     # now = Time.current
     # @bbb = now.ago(1.days).strftime("%Y-%m-%d")
   end
@@ -49,6 +49,6 @@ class ItemsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:item).permit(:day, :time, :name, :start_time)
+    params.require(:item).permit(:day, :time, :start_time, :user_id)
   end
 end

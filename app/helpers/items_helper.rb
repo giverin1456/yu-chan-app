@@ -1,8 +1,6 @@
 module ItemsHelper
   def times
-    times = ["9:00",
-             "9:30",
-             "10:00",
+    times = ["10:00",
              "10:30",
              "11:00",
              "11:30",

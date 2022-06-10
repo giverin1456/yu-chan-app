@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'information'
+      get 'reservation'
     end
   end
   resources :admins

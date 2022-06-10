@@ -184,7 +184,8 @@ select#outpatient_start_time_2i {
 
 // week
 .simple-calendars {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 
   .day {
   }
@@ -202,7 +203,7 @@ select#outpatient_start_time_2i {
   }
 
   .today {
-    background-color: rgb(137, 255, 137);
+    background-color: rgb(184, 243, 184);
   }
   .past {
   }

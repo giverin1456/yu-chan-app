@@ -5,10 +5,10 @@ class ItemsController < ApplicationController
     @outpatient = Outpatient.all.order(start_time: :DESC)
     @item = @outpatient.page(params[:page]).per(15)
 
-    @reservations = Item.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
-    @aa = Item.all.where("day >= ?", @bbb)
-    now = Time.current
-    @bbb = now.ago(3.days).strftime('%Y-%m-%d')
+    
+    @reserve = Item.all.where(day: Date.current.since(1.day)).order("time")
+    # now = Time.current
+    # @bbb = now.ago(1.days).strftime("%Y-%m-%d")
   end
 
   def new
@@ -41,6 +41,10 @@ class ItemsController < ApplicationController
     @month = params[:month] ? Date.parse(params[:month]) : Time.zone.today
     @orders = User.where(created_at: @month.all_month)
     @now = Time.now.strftime('%Y%m%d')
+  end
+
+  def reservation
+    @reservations = Item.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
   end
 
   private

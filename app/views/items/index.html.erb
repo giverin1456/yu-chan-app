@@ -35,7 +35,7 @@
 </div>
 <%end%>
 
-<%= link_to users_path do%>
+<%= link_to reservation_items_path do%>
 <div class="item-box">
 <div class="item-contents">
 <div class="item-index-image">
@@ -106,19 +106,37 @@
       <%# <h1>予約画面</h1> %>
       <%# <p>3ヶ月先まで予約することができます。</p> %>
     </div>
-    <div class="col-12 mt-3">
-      <%= week_calendar events: @reservations do |date, reservations| %>
-        <%= date.day %>
-      <% end %>
-    </div>
   </div>
 </div>
 
+ <% if admin_signed_in?%>
+<div class="item-index-outpatient">
+<%= Time.now.strftime('%Y/%m/%d')%>の予約者リスト
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">予約時間</th>
+      <th scope="col">名前</th>
+    </tr>
+  </thead>
+    <% @reserve.each do |reserve|%>
+  <tbody>
+    <tr>
+      <td><%= reserve.time%></td>
+      <td><%= reserve.name%></td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+<div class="kaminari">
+<div class="kaminari-list">
+<%= paginate @item, theme: 'twitter-bootstrap-4' %>
+</div>
+</div>
+</div>
+<%end%>
 
-<%#= @now%>
-<%# @orders.each do |orders|%>
-<%#= orders.name%>
-<%#end%>
+
  <% if admin_signed_in?%>
 <div class="item-index-outpatient">
 <table class="table">

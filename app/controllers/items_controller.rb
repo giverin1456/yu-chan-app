@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-    binding.pry
+
   end
 
 

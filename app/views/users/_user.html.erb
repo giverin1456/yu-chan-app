@@ -19,7 +19,7 @@
        <td class="user-list"><%= user.id%></td>
       <td class= "user-list"><%= link_to (user.name),user_path(user.id)%></td>
       <td class="user-list"><%= user.gender.name%></td>
-      <td class="user-list"><%= user.birthday.strftime('%Y/%m/%d')%>（<%=(@now - (user.birthday.strftime('%Y%m%d')).to_i)/10000%>歳）</td>
+      <td class="user-list"><%= user.birthday.strftime('%Y/%m/%d')%></td>
     </tr>
     <%end%>
   </tbody>

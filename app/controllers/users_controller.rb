@@ -2,14 +2,15 @@ class UsersController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :show, :create, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
-    @users = User.all.order("name")
+    # @users = User.all.order("name")
     @sss = Outpatient.order(created_at: :desc).first
-    @now = Time.now.strftime('%Y%m%d').to_i
-
+    @users = User.search(params[:keyword])
     @item = @users.page(params[:page]).per(15)
 
-    # @ttt = User.left_joins(:outpatients).where(outpatients: {user_id: user.id})
-    # @month_record = User.outpatients.group("MONTH(start_time)")
+    # now = Time.now.strftime('%Y%m%d').to_i
+    # birthday = @item.birthday.strftime('%Y%m%d').to_i
+    # @age = (now - birthday)/10000
+
   end
 
   def new
@@ -63,6 +64,7 @@ class UsersController < ApplicationController
 
   def search
     @users = User.search(params[:keyword])
+    @item = @users.page(params[:page]).per(15)
   end
 
   private

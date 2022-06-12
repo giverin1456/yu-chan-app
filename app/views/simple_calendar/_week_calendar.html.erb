@@ -38,12 +38,12 @@
             <% week.each do |day| %>
               <td>
                 <% if check_reservation(reservations, day, time) %>
-                  <%= link_to '×', root_path%>
+                  <%= link_to "×", root_path%>
                 <% else %>
                   <%= link_to new_item_path(day: day, time: time) do %>
                     <%= '○' %>
                   <% end %>
-                <% end %>
+                <%end%>
               </td>
             <% end %>
           </tr>

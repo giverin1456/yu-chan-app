@@ -28,12 +28,14 @@ class ItemsController < ApplicationController
   end
 
   def create
+    
     @reservation = Item.new(reservation_params)
     if @reservation.save
       redirect_to item_path @reservation.id
     else
       render :new
     end
+
   end
 
 

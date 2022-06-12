@@ -44,4 +44,6 @@ class Item < ApplicationRecord
     end
     reservation_data
   end
+
+
 end

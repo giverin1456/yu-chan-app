@@ -24,7 +24,7 @@ https://yu-chan-app.herokuapp.com/
 
 ### ログイン情報  
 - ユーザー：鈴木太郎
-- Eメール：give.taiki1456@gmail.com  
+- Eメール：suzuki@gmail.com  
 - パスワード：taiki1456  
 
 <br>
@@ -53,6 +53,9 @@ https://yu-chan-app.herokuapp.com/
 USERごとにそれぞれカレンダーを表示します。日程を選択し、料金、施術内容、特記事項を登録することができます。登録した日にちの枠は黄色になり、使用料金と特記事項を入力した場合はイラストが表示されます。料金と特記事項のイラストをクリックすると、詳細ページに遷移します。
 ## カレンダー詳細ページ
 [![Image from Gyazo](https://i.gyazo.com/01d73a43348cd2275a76f7d23b03c4be.gif)](https://gyazo.com/01d73a43348cd2275a76f7d23b03c4be)
+入力した情報を見ることができます。また、編集と削除を行うことができます。
+## 予約システム
+[![Image from Gyazo](https://i.gyazo.com/1c218f0c758a0c23031df6d5b031e421.png)](https://gyazo.com/1c218f0c758a0c23031df6d5b031e421)
 入力した情報を見ることができます。また、編集と削除を行うことができます。
 
 <br>
@@ -96,8 +99,6 @@ VScode
 
 今後実装したい機能としては以下の通りです。  
 
-- 予約システム
-  - カレンダーでそれぞれ1時間ごとに予約枠を作成し、予約があれば×を表示し、予約があれば○を表示する。
 - 分析ツール
  - 月毎、週ごとの売り上げや施術内容をグラフ化
  - 来院者全体の情報を表示し分析できる機能
@@ -172,3 +173,17 @@ VScode
 ### Association
 - belongs_to :user
 - has_many_attached :images
+
+
+
+## items テーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------  | -----------------------------  |
+| day                | date       | null: false                    |
+| time               | string     | null: false ,unique: true      |
+| start_time         | datetime   | null: false                    |
+| user_id            | references | null: false, foreign_key:true  |
+
+### Association
+- belongs_to :user

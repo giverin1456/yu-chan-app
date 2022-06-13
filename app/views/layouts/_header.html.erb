@@ -21,12 +21,13 @@
               <%= link_to "患者様情報",users_path,class:"nav-link"%>
           </li>
         </ul>
-        <%end%>
-<%= form_with(url: search_users_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
+        <%= form_with(url: search_users_path, local: true, method: :get, class: "form-inline my-2 my-lg-0") do |form| %>
   <%= form.text_field :keyword, placeholder: "利用者検索", class: "form-control mr-sm-2" %>
   <%= form.submit "検索", class: "btn btn-outline-success my-2 my-sm-0" %>
 <% end %>
- <% unless admin_signed_in?%>
+        <%end%>
+         <% unless admin_signed_in?%>
+
 <%= link_to "ログイン", new_admin_session_path, class: "nav-link" %>
  <%= link_to "新規登録", new_admin_registration_path, class: "nav-link" %>
 <%end%>
